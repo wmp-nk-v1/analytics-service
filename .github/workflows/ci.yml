@@ -14,7 +14,6 @@ jobs:
     runs-on: self-hosted
     steps:
       - uses: actions/checkout@v6
-      - uses: actions/checkout@v6
         with:
           repository: nikkaushal/wmp-helm-v1
           path: helm
