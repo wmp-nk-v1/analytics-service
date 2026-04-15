@@ -16,7 +16,7 @@ jobs:
       - uses: actions/checkout@v6
       - uses: actions/checkout@v6
         with:
-          repository: wmp-helm-v1
+          repository: nikkaushal/wmp-helm-v1
           path: helm
       - name: Helm Deploy
         run: make eks-deploy
