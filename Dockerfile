@@ -1,9 +1,11 @@
+# UNCOMMENT THIS FOR RUNNING WITHOUT SONARQUBE SCAN
 FROM        docker.io/library/python:3.12
 WORKDIR     /app
 COPY        ./ /app/
 RUN         pip3.12 install --no-cache-dir .
 COPY        run.sh /
 
+# USE THIS FOR RUNNING WITH SONARQUBE SCAN
 # ENTRYPOINT  ["bash", "/run.sh"]
 # FROM        sonarsource/sonar-scanner-cli AS sonar-scanner
 # WORKDIR     /usr/src
