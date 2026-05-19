@@ -11,7 +11,7 @@ FROM        sonarsource/sonar-scanner-cli AS sonar-scanner
 WORKDIR     /usr/src
 COPY        ./ /usr/src/
 RUN         sonar-scanner \
-            -Dsonar.host.url=http://34.207.195.225/9000 \
+            -Dsonar.host.url=http://34.207.195.225:9000 \
             -Dsonar.login=admin -Dsonar.password=admin123 -Dsonar.qualitygate.wait=true \
             -Dsonar.projectKey=analytics-service \
             -Dsonar.sources=. && \
