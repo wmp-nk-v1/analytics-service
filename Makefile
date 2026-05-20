@@ -2,6 +2,7 @@ docker-build:
 	git pull
 	aws ecr get-login-password --region us-east-1 | docker login --username AWS --password-stdin 293222827824.dkr.ecr.us-east-1.amazonaws.com
 	docker build -t 293222827824.dkr.ecr.us-east-1.amazonaws.com/analytics-service:${image_tag} .
+	trivy image 293222827824.dkr.ecr.us-east-1.amazonaws.com/analytics-service:$(image_tag) -s CRITICAL,HIGH --ignore-unfixed
 	docker push 293222827824.dkr.ecr.us-east-1.amazonaws.com/analytics-service:${image_tag}
 
 eks-deploy:
